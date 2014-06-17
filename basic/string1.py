@@ -23,9 +23,14 @@
 # instead of the actual count.
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
-def donuts(count):
+def donuts(bob):
   # +++your code here+++
-  return
+  a = 'Number of donuts: ' + str(bob)
+  b = 'Number of donuts: many'
+  #if the count is 10 or more
+  if (bob == 10 or bob > 10):
+    a = b
+  return a
 
 
 # B. both_ends
@@ -35,7 +40,15 @@ def donuts(count):
 # is less than 2, return instead the empty string.
 def both_ends(s):
   # +++your code here+++
-  return
+  a = s
+  b = len(a)
+  c = (b-2)
+  d = a[0:2] + a[c:b]
+  #test to see if s is one character if so
+  #return '' 
+  if (len(a) == 1):
+    d = ''
+  return d
 
 
 # C. fix_start
@@ -49,7 +62,57 @@ def both_ends(s):
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
   # +++your code here+++
-  return
+  # s.replace(stra, strb)
+  #a = s
+  #b = len(a)
+  #c = (b-2)
+  #d = '*'
+  #e = s.replace(a, d)
+  #return aS
+  ##a = s
+  #b = len(a)
+  ##stra = a[0]
+  ##strb = '*'
+  #d = a.replace(stra, '*')
+  ##d = a.replace(stra, strb)
+  ##if (stra == a[0]):
+    #e = a[0] + d
+  ##  e = a[0]
+  ###stra = s[1:]
+  ###d = stra.replace(stra, b)
+
+#Blue team code working  
+  a = s[0]
+  b = '*'
+  c = s[1:]
+  d = c.replace(a,b)
+  e = a + d
+  return e
+'''
+#Kevin's code attempt below which replaced the first letter and all letters after
+def fix_start(s):
+  a = s
+  stra = a[0]
+  strb = '*'
+  d = stra + a.replace(stra, strb)
+  return d
+'''
+
+
+  #c = a + stra
+  #d = a.replace(stra, b)
+
+
+  
+ # a = s
+ # b = len(a)
+ # stra = a[0]
+  #for each stra
+  #if ()
+  #return a
+  
+
+
 
 
 # D. MixUp
@@ -61,7 +124,27 @@ def fix_start(s):
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
   # +++your code here+++
-  return
+  z = a[:2]
+  y = b[:2]
+  x = a[2:]
+  w = b[2:]
+  v = y + x
+  u = z + w
+  t = v + ' ' + u
+
+  return t
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Provided simple test() function used in main() to print
@@ -90,7 +173,7 @@ def main():
   test(both_ends('Hello'), 'Helo')
   test(both_ends('a'), '')
   test(both_ends('xyz'), 'xyyz')
-
+  test(both_ends(''), '')
   
   print
   print 'fix_start'
